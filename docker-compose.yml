@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  server:
+    build: ./server
+    command: python3.9 -u app.py
+    ports:
+      - 5432:5432
+    depends_on:
+      - "mongodb"
+    # volumes allows local changes to be reflected in the container
+    volumes:
+      - ./server:/server
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - 27017:27017
+
+  client:
+    build: ./client
+    command: npm start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "server"
+    volumes:
+      - ./client:/var/www/html
+      # prevent overwriting of node_modules
+      - /var/www/html/node_modules

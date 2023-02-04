@@ -1,0 +1,6 @@
+flask
+flask-cors
+Flask-Session
+pymongo
+pyjwt
+bcrypt

@@ -1,0 +1,5 @@
+////////////////////
+// Constants
+////////////////////
+
+export const apiUrl = "http://localhost:5432/api";

@@ -1,0 +1,170 @@
+
+/* Main Container for Sidebar*/
+.sidebar_wrapper {
+  display: flex;
+  position:fixed;
+  top:0;
+  left:0;
+
+  background-color: #477646;
+  color: white;
+
+  flex-direction: column;
+
+  height: 100vh;
+
+  z-index:10000;
+}
+
+.sidebar_wrapper h1 {
+  font-weight: 500;
+  font-size: 32px;
+
+  font-family: Comfortaa;
+  align-self: center;
+
+  margin: 0;
+  margin-top: 1em;
+
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+
+  border-bottom: solid 1px white;
+}
+
+/* Takes up space on page, keeps margins correct since sidebar_wrapper is fixed*/
+
+.sidebar_back{
+  height:100vh;
+  width:11.6em;
+}
+
+/* Sidebar Nav List */
+
+.sidebar_wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  padding: 2em 2em;
+  gap: 3em;
+
+  overflow-y: auto;
+}
+
+.sidebar_wrapper ul::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar_wrapper ul::-webkit-scrollbar-thumb {
+  background-color: rgb(119, 177, 134);
+  border-radius: 4px;
+}
+
+.sidebar_wrapper li {
+  margin: 0;
+
+  font-size: 20px;
+  color: #f2f2f2;
+  font-family: Quicksand;
+  cursor: pointer;
+  padding-bottom: .2em;
+}
+
+.sidebar_wrapper li:hover {
+  color: white;
+  border-bottom: solid 1px white;
+  margin-bottom: -1px;
+}
+
+.horizontal_bar {
+  display: none;
+}
+
+.flex_center {
+  justify-content: center;
+  display: flex;
+
+  flex-grow: 1;
+}
+
+
+/* Mobile */
+
+@media all and (max-width: 600px) {
+  .horizontal_bar {
+    display: flex;
+    width: 100vw;
+
+    background-color: #477646;
+
+    height: 90px;
+  }
+
+  .nav_button {
+    position: absolute;
+    top: .6em;
+    left: .5em;
+
+    padding: .25em .3em;
+    font-size: 32px;
+
+    cursor:pointer;
+  }
+
+  .horizontal_bar h1 {
+    justify-self: center;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: Comfortaa;
+
+    color: white;
+
+    padding: .25em;
+    padding-bottom: .25em;
+
+    display:flex;
+  }
+
+  /* Makes Sidebar Wrapper pop up */
+
+  .sidebar_wrapper {
+    visibility: hidden;
+    position: absolute;
+
+    left: -120px;
+    top:90px;
+
+    max-height: calc(100vh - 90px)
+  }
+
+  .sidebar_visible {
+    visibility: visible !important;
+    left: 0;
+
+    transition: left .1s;
+  }
+
+  .sidebar_wrapper h1 {
+    display: none;
+  }
+
+  .sidebar_back{
+    display:none;
+  }
+}
+
+/* Expands gaps when mobile device is ~800 px */
+
+@media all and (min-height: 800px) {
+
+  .sidebar_wrapper ul {
+    gap: 4em !important;
+  }
+}

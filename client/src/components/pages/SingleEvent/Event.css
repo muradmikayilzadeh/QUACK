@@ -1,0 +1,305 @@
+/* General Structure */
+
+.event_wrapper{
+    display:flex;
+
+    width:800px;
+
+    padding-top:2em;
+    margin:2em;
+    margin-left:3em;
+
+    border-top: solid 1px rgb(180, 180, 180);
+
+    
+    overflow-wrap:break-word;
+}
+
+/* Info Section */
+.info_container{
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+
+    width:100%;
+}
+
+.info_header{
+    display:flex;
+    flex-wrap:wrap;
+    gap:2em;
+}
+
+.event_wrapper .event_image{
+    background-color:rgb(52, 109, 65);
+    display:flex;
+    align-self:flex-start;
+    border-radius:6px;
+}
+
+.event_image img{
+    min-width:200px;
+    max-width:350px;
+    max-height:270px;
+
+    align-self:flex-start;
+}
+
+.title_author{
+    display:flex;
+    flex-direction:column;
+
+    gap:.5em;
+}
+
+.info_header h1{
+    margin:0;
+    padding:0;
+
+    font-family:Quicksand;
+    font-weight:500;
+    font-size:28px;
+}
+
+.info_header p{
+    font-size:22px;
+    font-family:Quicksand;
+
+    color: #295C2E;
+
+    margin:0;
+}
+
+.header_text{
+    display:flex;
+    flex-direction:column;
+    gap:3em;
+}
+
+/* Date, Location, Time */
+
+.dateloc_info{
+    display:flex;
+    flex-direction:column;
+
+    gap:.75em;
+}
+
+.dateloc_info p{
+    display:flex;
+    gap:.5em;
+
+    font-size:20px;
+
+    color:black;
+}
+
+.dateloc_info img{
+    width:20px;
+    height:20px;
+    margin-top:3px;
+}
+
+p.loc a{
+    color:#478c4e;
+}
+
+/* Description Section */
+
+.desc_section{
+    margin-top:.2em;
+    display:flex;
+    flex-direction:column;
+    gap:.7em;
+}
+
+.desc_section p.sec_header{
+    font-size:22px;
+    font-weight:600;
+
+    color:black;
+}
+
+.desc_section p{
+    font-family: Quicksand;
+    font-size:20px;
+
+    margin:0;
+
+    color:rgb(62, 62, 62);
+}
+
+.interact_section{
+    display:flex;
+    align-content:flex-end;
+    justify-content:flex-end;
+
+    gap:1.2em;
+
+    padding-bottom:2em;
+    border-bottom: solid 1px rgb(180, 180, 180);
+}
+
+.interact_section button{
+
+    color:white;
+    background-color:#418348;
+    padding: .25em .5em;
+
+    width:83px;
+
+    font-size:20px;
+
+    outline:none;
+    cursor:pointer;
+
+    font-family:Quicksand;
+    outline:none;
+    border:none;
+}
+
+.interact_section button:hover{
+    color:white;
+    background-color:#4f9b57;
+}
+
+.interact_section button.clicked{
+    background-color:#bc4a63;
+}
+
+.interact_section button.clicked:hover{
+    background-color:#b43d43;
+}
+
+.button_wrapper{
+    display:flex;
+}
+
+.button_wrapper .count{
+    width:40px;
+    background-color:rgb(238, 238, 238);
+
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+}
+
+.count p{
+    font-family:Quicksand;
+    text-align:center;
+
+    align-self:center;
+    margin:0;
+}
+
+
+/* Comment Section */
+
+.comment_section{
+    display:flex;
+    flex-direction:column;
+}
+
+.comment_input{
+    border-bottom: solid 1px #E7E7E7;
+    display:flex;
+    align-items:flex-start;
+}
+
+.comment_input textarea{
+    font-family:Quicksand;
+    font-size:20px;
+
+    margin:0;
+    padding:.75em 1em;
+    padding-bottom:1.25em;
+
+    border:none;
+    outline:none;
+
+    flex-grow:1;
+
+    resize:none;
+
+    margin-right:.5em;
+}
+
+.comment_input button{
+    border:none;
+    border-radius:34px;
+    background-color:inherit;
+
+    background-color:#295C2E;
+    color:white;
+    
+    font-family:Quicksand;
+    font-size:20px;
+
+    cursor:pointer;
+
+    padding:.5em 1em;
+    margin-top:.25em;
+}
+
+.comment_input button:hover{
+    background-color:#37673c;
+    transition:background-color .25s ease-in-out;
+}
+
+.comment_input button:active{
+    background-color:#bad21b;
+    transition:background-color .002s ease-in-out;
+}
+
+/* Reply List */
+
+.reply_list{
+    display:flex;
+    flex-direction:column;
+}
+
+.reply_entry{
+    display:flex;
+    flex-direction:column;
+    
+    padding:1em;
+
+    border-bottom: solid 1px #E7E7E7;
+
+    gap:.5em;
+}
+
+.reply_header{
+    display:flex;
+    gap:.5em;
+}
+
+.reply_entry p{
+    font-family: Quicksand;
+    font-size:18px;
+    margin:0;
+}
+
+p.post_time{
+    color:#646464;
+}
+
+
+@media all and (max-width: 600px) {
+    .event_wrapper{
+        width:90vw;
+        margin-left:2em;
+    }
+    .info_header{
+        flex-direction:column;
+    }
+
+    .comment_input{
+        max-width:90vw;
+    }
+
+    .event_image img{
+        max-width:90vw;
+    }
+}

@@ -1,0 +1,19 @@
+/* Global */
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.core{
+  display:flex;
+}
+
+@media all and (max-width: 600px) {
+  .core{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+}
